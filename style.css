@@ -1,0 +1,319 @@
+/* Font Awesome CDN Link */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+
+/* Google Fonts CDN Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --purple: #8c52ff;
+    --blue: #5e17eb;
+    --black: #cb6ce6;
+    --white: #fff;
+    --light-color: #ff66c4;
+    --light-bg: #f4f4f4;
+    --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    --border: .1rem solid rgba(0, 0, 0, .3);
+    --gradient: linear-gradient(90deg, var(--blue), var(--purple));
+    --gradient-hover: linear-gradient(90deg, var(--purple), var(--blue));
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+}
+
+::selection {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 9rem;
+}
+
+::-webkit-scrollbar {
+    width: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--black);
+}
+
+section {
+    padding: 3rem 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    cursor: pointer;
+    padding: 1rem 3rem;
+    background: var(--gradient);
+    border-radius: 5rem;
+    font-size: 1.8rem;
+    color: var(--white);
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+}
+
+.header .flex {
+    padding: 1.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .flex .logo img {
+    height: 8rem;
+}
+
+.header .flex .navbar a {
+    margin-left: 2rem;
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.header .flex .navbar a:hover {
+    color: var(--purple);
+}
+
+#menu-btn {
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: var(--black);
+    display: none;
+}
+
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-btn {
+        display: inline-block;
+        transition: .2s linear;
+    }
+
+    #menu-btn.fa-times {
+        transform: rotate(90deg);
+    }
+
+    .header .flex .navbar {
+        position: absolute;
+        top: 99%;
+        left: 0;
+        right: 0;
+        background-color: var(--white);
+        border-top: var(--border);
+        border-bottom: var(--border);
+        clip-path: polygon(0 0, 100% 0, 0 0);
+        transition: .2s linear;
+    }
+
+    .header .flex .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .header .flex .navbar a {
+        display: block;
+        margin: 2rem;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+.home {
+    min-height: 100vh;
+    background: url("images/welcome.png"); /* Add background URL */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.about .flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about .flex .content h3 {
+    font-size: 4rem;
+    color: #8c52ff;
+    margin-bottom: .5rem;
+}
+
+.about .flex .content p {
+    font-size: 2.8rem;
+    color: var(--light-color);
+    line-height: 1.8;
+    padding: 3px;
+}
+
+.offer-countdown {
+    background: url("C:/Users/Warushi/Desktop/New year/images/collection.png") no-repeat;
+
+
+   /*  no-repeat center center/cover;*/
+    background-size: cover;
+    background-position: center;
+    padding: 5rem 2rem;
+}
+
+
+.swiper-slide.box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow);
+    background: var(--white);
+    height: 15%;
+}
+
+.swiper-slide.box img {
+    width: 5%;
+    height: 10%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.offer-countdown .content {
+   text-align: center;
+}
+
+.offer-countdown .content  h3{
+    text-transform: uppercase;
+    font-size: 4rem;
+    color:var(--white);
+    margin-bottom: 2rem;
+}
+
+.offer-countdown .content  p{
+    font-size: 2rem;
+    color: var(--white);
+    padding: .5rem 0;
+}
+
+.offer-countdown .content  .flex{
+    display: flex;
+    justify-content: center;
+    gap:1rem;
+    margin:2rem 0;
+
+}
+
+
+.offer-countdown .content  .flex .box{
+    width: 10rem;
+    border-radius: .5rem;
+    background-color: #BF92E4;
+    text-align: center;
+    padding: 1rem;
+}
+
+.offer-countdown .content  .flex .box .count{
+    font-size: 3rem;
+    color: var(--black);
+}
+
+.offer-countdown .content  .flex .box .count span{
+    font-size: 1.5rem;
+    color: var(--black);
+}
+
+
+
+.contact-container {
+    background: url('images/workspace.png') no-repeat; /* Add background URL */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center; /* Horizontally centers content */
+    align-items: center; /* Vertically centers content */
+    min-height: 100vh; /* Makes the container take the full height of the screen */
+    padding-top: 10px; /* Minimized top padding */
+    padding-bottom: 10px; /* Minimized bottom padding */
+}
+
+.contact-container .row {
+    text-align: center; /* Centers text within the row */
+}
+
+.contact-container .row .info-container .box h3 {
+    font-size: 22px; /* Increased by 2px from the original size */
+    font-weight: bold; /* Makes headings stand out */
+}
+
+.contact-container .row .info-container .box p {
+    font-size: 17px; /* Increased by 2px from the original size */
+}
+
+
+
+
+
+
+
+
+.footer {
+    background: var(--gradient);
+}
+
+.footer section {
+    font-size: 2rem;
+    color: var(--white);
+    text-align: center;
+}
+
+
+
+
+.top-message {
+    font-size: 30px; /* Increased by 10px (originally 10px, now 20px) */
+    text-align: center;
+    margin-bottom: 20px; /* Adds space below the message */
+    font-weight: bold; /* Makes it stand out more */
+	color:purple;
+}
+
+.product-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Spacing between rows */
+}
+
+.box {
+    width: 48%; /* Adjust width to fit two boxes in one row */
+    text-align: center;
+}
+
+.price {
+    font-size: 18px; /* 2px larger for the price text */
+    font-weight: bold; /* Makes the price more prominent */
+}
