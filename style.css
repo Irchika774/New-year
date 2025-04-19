@@ -300,17 +300,25 @@ section {
     margin-bottom: 20px; /* Adds space below the message */
     font-weight: bold; /* Makes it stand out more */
 	color:purple;
+    line-break: normal;
 }
 
 .product-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex-wrap: wrap;
     margin-bottom: 20px; /* Spacing between rows */
 }
 
 .box {
-    width: 48%; /* Adjust width to fit two boxes in one row */
+    width: 60%; /* Adjust width to fit two boxes in one row */
     text-align: center;
+    
+}
+
+.product-row > .box > img {
+    border-radius: 5px;
+    height: 300px;
 }
 
 .price {
