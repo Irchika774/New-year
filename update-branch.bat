@@ -1,6 +1,6 @@
 @echo off
 
-echo Git Commit and Push to Current Branch
+echo Simple Git Commit and Push Script
 
 rem Ask for commit message
 set /p COMMIT_MSG=Enter your commit message: 
@@ -11,8 +11,18 @@ git add .
 rem Commit with the provided message
 git commit -m "%COMMIT_MSG%"
 
-rem Push to current branch
-git push
+rem Get current branch name
+for /f %%i in ('git rev-parse --abbrev-ref HEAD') do set CURRENT_BRANCH=%%i
+
+rem Try to push, and if it fails due to no upstream branch, set the upstream
+git push --porcelain 2>&1 | findstr "has no upstream" > nul
+if %ERRORLEVEL% EQU 0 (
+    echo Setting upstream branch and pushing...
+    git push --set-upstream origin %CURRENT_BRANCH%
+) else (
+    rem Normal push if upstream exists
+    git push
+)
 
 echo Done!
 pause
